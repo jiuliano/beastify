@@ -7,7 +7,7 @@ beastify():
 function beastify(request, sender, sendResponse) {
   // removeEverything();
   // insertBeast(request.beastURL);
-  alert(request.selection);
+  alert(window.location);
   browser.runtime.onMessage.removeListener(beastify);
 }
 
