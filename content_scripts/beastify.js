@@ -25,7 +25,7 @@ Clean URL
 */
 function cleanUrl(andAlso) {
     if (history.pushState) {
-    	re = /B0[0-1][A-Za-z0-9]{7}/i //regex for ASIN
+    	re = /B0[0-9][A-Za-z0-9]{7}/i //regex for ASIN
     	path = window.location.pathname
     	found = path.match(re); //returns asin found in URL
 
