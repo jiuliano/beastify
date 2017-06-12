@@ -28,6 +28,6 @@ document.addEventListener("click", (e) => {
     });
 
     //browser.tabs.reload();
-    window.close();
+    //window.close();
   }
 });
