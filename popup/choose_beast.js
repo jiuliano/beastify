@@ -31,3 +31,9 @@ document.addEventListener("click", (e) => {
     //window.close();
   }
 });
+
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+    if (request.action == "closeView") {
+        window.close();
+    }
+});

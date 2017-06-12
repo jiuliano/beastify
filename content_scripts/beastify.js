@@ -32,6 +32,10 @@ function cleanUrl(andAlso) {
             window.location = newurl;
       	}
     }
+
+    chrome.runtime.sendMessage({
+        action: "closeView"
+    });
 }
 /*
 Remove every node under document.body
