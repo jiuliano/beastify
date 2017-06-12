@@ -30,16 +30,6 @@ function cleanUrl(andAlso) {
       	if(found) {
       	    var newurl = window.location.protocol + "//" + window.location.host + "/dp/" + found[0] + andAlso;
             window.location = newurl;
-      	    // window.history.pushState({path:newurl},'',newurl);
-      	} else {
-            alert("did not find it: " + path);
-            /*
-      		l = path.split("/").length-1
-      		y = path.split("/").slice(0,l)
-      		x = y.join("/")
-      		var newurl = window.location.protocol + "//" + window.location.host + x;
-      		window.history.pushState({path:newurl},'',newurl);
-            */
       	}
     }
 }
