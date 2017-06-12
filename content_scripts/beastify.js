@@ -8,13 +8,11 @@ function beastify(request, sender, sendResponse) {
   // removeEverything();
   // insertBeast(request.beastURL);
   switch ( request.selection ) {
-      case "Frog":
+      case "Clean":
           cleanUrl("");
           break;
-      case "Turtle":
+      case "Debug":
           cleanUrl("?isDebug=1");
-          break;
-      case "Snake":
           break;
   }
   browser.runtime.onMessage.removeListener(beastify);
