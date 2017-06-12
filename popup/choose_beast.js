@@ -26,9 +26,8 @@ document.addEventListener("click", (e) => {
           selection: chosenBeast
       });
     });
-  }
-  else if (e.target.classList.contains("clear")) {
-    browser.tabs.reload();
+
+    //browser.tabs.reload();
     window.close();
   }
 });
