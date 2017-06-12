@@ -31,13 +31,16 @@ document.addEventListener("click", (e) => {
     var chosenBeast = e.target.textContent;
     var chosenBeastURL = beastNameToURL(chosenBeast);
 
-    browser.tabs.executeScript(null, { 
-      file: "/content_scripts/beastify.js" 
+    browser.tabs.executeScript(null, {
+      file: "/content_scripts/beastify.js"
     });
 
     var gettingActiveTab = browser.tabs.query({active: true, currentWindow: true});
     gettingActiveTab.then((tabs) => {
-      browser.tabs.sendMessage(tabs[0].id, {beastURL: chosenBeastURL});
+      browser.tabs.sendMessage(tabs[0].id, {
+          beastURL: chosenBeastURL,
+          selection: chosenBeast
+      });
     });
   }
   else if (e.target.classList.contains("clear")) {

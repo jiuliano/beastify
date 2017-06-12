@@ -5,8 +5,9 @@ beastify():
 * then removes itself as a listener
 */
 function beastify(request, sender, sendResponse) {
-  removeEverything();
-  insertBeast(request.beastURL);
+  // removeEverything();
+  // insertBeast(request.beastURL);
+  alert(request.selection);
   browser.runtime.onMessage.removeListener(beastify);
 }
 
