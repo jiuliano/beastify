@@ -7,10 +7,40 @@ beastify():
 function beastify(request, sender, sendResponse) {
   // removeEverything();
   // insertBeast(request.beastURL);
-  alert(window.location);
+  switch ( request.selection ) {
+      case "Frog":
+          cleanUrl("");
+          break;
+      case "Turtle":
+          cleanUrl("?isDebug=1");
+          break;
+      case "Snake":
+          break;
+  }
   browser.runtime.onMessage.removeListener(beastify);
 }
 
+/*
+Clean URL
+*/
+function cleanUrl(andAlso) {
+    if (history.pushState) {
+    	re = /B0[0-1][A-Za-z0-9]{7}/i //regex for ASIN
+    	path = window.location.pathname
+    	found = path.match(re); //returns asin found in URL
+
+      	if(found) {
+      	    var newurl = window.location.protocol + "//" + window.location.host + "/dp/" + found[0] + andAlso;
+      	    window.history.pushState({path:newurl},'',newurl);
+      	} else {
+      		l = path.split("/").length-1
+      		y = path.split("/").slice(0,l)
+      		x = y.join("/")
+      		var newurl = window.location.protocol + "//" + window.location.host + x;
+      		window.history.pushState({path:newurl},'',newurl);
+      	}
+    }
+}
 /*
 Remove every node under document.body
 */
